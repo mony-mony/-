@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>미래 계획</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight * 0.8;
+
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+
+                    if (sectionTop < triggerBottom) {
+                        section.classList.add('visible');
+                    } else {
+                        section.classList.remove('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); 
+        });
+
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header, nav{
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin-right: 10px;
+            text-decoration-line: none;
+            color: inherit;
+        }
+        
+
+        .heading_container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .small{
+            border: 2px solid #333;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        span{
+            transition: font-size 3s;
+        }
+        span:hover{
+            font-size: 500%;
+        }
+        ul{
+            list-style-type: square;
+        }
+        .img2 img{   
+            position: absolute;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+            margin-bottom: 50px;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="img2">
+            <img src = "루리2.png" width="100" height="50">
+            <img src = "루리.png" width="100" height="50">
+        </div>
+
+        <script>
+            var imgArray = document.getElementsByTagName("img");
+                for(i = 0; i < imgArray.length; i++){
+                    var obj = imgArray[i];
+                    obj.style.zIndex = i;
+                    obj.style.left = "10px";
+                    obj.style.top = "20px";
+                    obj.onclick = shuffle;
+            }
+            function shuffle(){
+                for(i = 0; i < imgArray.length; i++){
+                var obj = imgArray[i];
+                obj.style.zIndex++;
+                obj.style.zIndex %= imgArray.length;
+                }
+            }
+        </script>
+       
+        <h1>Ruri</h1>
+        <hr>
+
+        <div class="img3">
+            <img src="AI.jpg" width="100%" height="100%">
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div class="heading_container">
+            <nav>
+                <a href="home.html"><strong>홈&ensp;&ensp;</strong></a>
+                <a href="intro.html"><strong>주제&ensp;&ensp;</strong></a>
+                <a href="growth.html"><strong>성장 과정&ensp;&ensp;</strong></a>
+                <a href="issue.html"><strong>사회 이슈&ensp;&ensp;</strong></a>
+                <a href="company.html"><strong>기업&ensp;&ensp;</strong></a>
+                <a href="future.html"><strong>미래 계획&ensp;&ensp;</strong></a>
+                <a href="skills.html"><strong>역량&ensp;&ensp;</strong></a>
+                <a href="project.html"><strong>프로젝트</strong></a>
+                
+            </nav>
+        </div>
+        
+    </header>
+
+
+    <section class="section" id="future">
+
+        <div class="heading_container">
+            <h1><br><span>미래 계획</span><br></h1>
+        </div>
+
+        <div class="small">
+
+            <p><ul><li><strong>현재 저는 AI 기술에 대한 심도 깊은 공부와 창업 공부를 겸비한 취업 준비를 하고 있습니다.</strong></li><br><br>
+
+                <li>새로운 AI 기술을 개발하는 것보다는, 이미 존재하는 AI 기술들을 창의적이고 실용적으로 조합하는 방식에 중점을 두고 있습니다.
+                
+                이를 통해 더욱 혁신적이고 사용 가능한 AI 솔루션을 만들어 내는 것이 목표입니다.</li><br><br>
+                
+                <li>현재 진행 중인 프로젝트 중에 하나는 자연스러운 대화를 통해 컴퓨터 작업을 도와주거나, 일정 관리와 같은 사소한 일들을 처리해주는 AI 비서입니다.</li><br><br>
+                
+                <li><strong>이 AI 비서는</strong> 사용자의 음성을 인식하고, 이해하며, 필요한 작업을 자동으로 수행합니다.
+
+                현재 AI 비서를 통해 사용자의 목소리를 받아 그 음성 데이터를 텍스트 데이터로 변경하여 저장한 후 사용자가 그 내용을 알고 싶을 때나 까먹었을 경우 음성으로 알려주는 시스템을 구축하였습니다.
+                
+                이를 통해 사용자는 더욱 효율적으로 시간을 관리하고 사소한 약속이나 일정을 AI에게 맡긴 뒤 일상적인 업무를 처리할 수 있을 것이라 전망됩니다.</li><br><br>
+                
+                <li>또한, 저는 AI 기술을 활용한 또 다른 프로그램을 개발 중이며, 이와 관련된 논문을 작성하고 있습니다.
+
+                이 AI는 음성인식을 통한 암호화 시스템을 탑제하고 있습니다.
+                
+                이 논문을 통해 암호화와 AI 음성인식 기술의 이론적 기초를 다지고, 실제 응용 가능성을 입증하고자 합니다.
+                
+                이 논문은 학술대회에 제출할 예정으로, 이를 통해 AI 기술의 실제 구현 가능성과 실용성을 더욱 강화할 계획입니다.</li><br><br>
+                
+                <li>이와 같은 노력을 통해 AI 기술을 기반으로 한 창업 아이템을 구체화하고 있습니다. </li><br><br>
+                
+                <li><strong>현재 단계에서는</strong> 다양한 AI 기술들을 결합하여 혁신적인 제품을 개발하는 데 주력하고 있으며 이를 바탕으로 창업을 준비하고 있습니다.
+
+                다른 창업 준비로는 공주대학교 LMS에서 무료로 시청 할 수 있는 창업 관련 동영상을 시청하고 있으며, 책 또는 강의를 찾아 들으며 창업 아이템 이외의 것들도 차근차근 준비하고 있습니다.
+                
+                이러한 과정에서 단순히 기술적 지식뿐만 아니라, 비즈니스 모델과 시장요구를 이해하는 데에도 큰 도움이 되어 창업 준비 뿐만 아니라 취업 시장 준비까지 이어질 수 있을 것입니다.</li>
+
+            </ul></p>
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+</body>
+</html>

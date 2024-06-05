@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>주제</title>
+    <script>
+        function showMessage() {
+            alert("어렸을 때부터 로봇과 컴퓨터에 대한 깊은 흥미를 가지고 있었습니다. (1/8)");
+            alert("특히 초등학교 시절, 트랜스포머와 같은 로봇 애니메이션을 보면서 단순한 호기심을 넘어서서 실제로 저런 로봇을 만드는 사람이 되고 싶다는 꿈을 가지게 되었습니다. (2/8)");
+            alert("당시에는 로봇이 이미 상당한 발전을 이루고 있었지만, 진정으로 사람처럼 생각하고 행동하는 인공지능은 아직 먼 미래의 이야기였습니다. (3/8)");
+            alert("그렇기 때문에 저는 로봇 공학보다는 인공지능 프로그래밍에 더 큰 관심을 가지게 되었습니다. (4/8)");
+            alert("단순한 기계적 움직임을 넘어서서 인간과 소통하고, 인간의 감정을 이해하며, 자율적으로 학습하고 성장하는 인공지능을 만드는 것이 저의 최종 목표가 되었습니다. (5/8)");
+            alert("또한, 최근 몇 년간 인공지능 기술의 급격한 발전을 목격하면서 이 분야에 대한 열정이 더욱 커졌습니다. (6/8)");
+            alert("특히 알파고와 챗GPT 같은 혁신적인 기술들이 세상을 놀라게 했고, 인공지능이 단순한 도구를 넘어 우리 삶의 일부분이 될 수 있다는 가능성을 보여주었습니다. (7/8)");
+            alert("이런 변화를 보며 저는 인공지능 프로그래머로서 사람들의 삶을 더 편리하고 풍요롭게 만드는 데 기여하고 싶다는 결심을 하게 되었습니다. (8/8)");
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight * 0.8;
+
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+
+                    if (sectionTop < triggerBottom) {
+                        section.classList.add('visible');
+                    } else {
+                        section.classList.remove('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
+        });
+
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 10px;
+            text-decoration-line: none;
+            color: inherit;
+        }
+
+        .heading_container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .small{
+            border: 2px solid #333;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        span{
+            transition: font-size 3s;
+        }
+        span:hover{
+            font-size: 500%;
+        }
+        ul{
+            list-style-type: square;
+        }
+        .img2 img{   
+            position: absolute;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+            margin-bottom: 50px;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="img2">
+            <img src = "루리2.png" width="100" height="50">
+            <img src = "루리.png" width="100" height="50">
+        </div>
+
+        <script>
+            var imgArray = document.getElementsByTagName("img");
+                for(i = 0; i < imgArray.length; i++){
+                    var obj = imgArray[i];
+                    obj.style.zIndex = i;
+                    obj.style.left = "10px";
+                    obj.style.top = "20px";
+                    obj.onclick = shuffle;
+            }
+            function shuffle(){
+                for(i = 0; i < imgArray.length; i++){
+                var obj = imgArray[i];
+                obj.style.zIndex++;
+                obj.style.zIndex %= imgArray.length;
+                }
+            }
+        </script>
+       
+        <h1>Ruri</h1>
+        <hr>
+
+        <div>
+            <img src="AI.jpg" width="100%" height="100%">
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div class="heading_container">
+            <nav>
+                <a href="home.html"><strong>홈&ensp;&ensp;</strong></a>
+                <a href="intro.html"><strong>주제&ensp;&ensp;</strong></a>
+                <a href="growth.html"><strong>성장 과정&ensp;&ensp;</strong></a>
+                <a href="issue.html"><strong>사회 이슈&ensp;&ensp;</strong></a>
+                <a href="company.html"><strong>기업&ensp;&ensp;</strong></a>
+                <a href="future.html"><strong>미래 계획&ensp;&ensp;</strong></a>
+                <a href="skills.html"><strong>역량&ensp;&ensp;</strong></a>
+                <a href="project.html"><strong>프로젝트</strong></a>
+                
+            </nav>
+        </div>
+        
+    </header>
+
+    <section class="section" id="intro">
+
+        <div class="heading_container">
+            <h1><br><span>주제</span><br></h1>
+        </div>
+
+        <p>
+            <div class="small"><strong>주제 : </strong> 인공지능 프로그래머</div>
+
+            <div class="small"><strong>동기 : </strong> 어릴 때부터 로봇과 컴퓨터에 관심이 있었고, 인공지능 기술의 발전을 보며 인공지능 프로그래머로서 사람들의 삶을 개선하는 데 기여하고 싶다는 꿈을 가지게 되었습니다.  <button onclick="showMessage()">더 보기</button></div>
+
+            <div class="small"><strong>목표 : </strong> 모든 사람들이 스마트폰처럼 자신의 맞는 인공지능을 하나씩 가지고 다니며 자유롭게 사용하는 인공지능 프로그램을 만들고 싶습니다.</div>
+        </p>
+    
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+   
+</body>
+</html>

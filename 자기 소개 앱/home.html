@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>자기소개 과제</title>
+
+    <script>
+        function showMessage() {
+            alert("어렸을 때부터 로봇과 컴퓨터에 대한 깊은 흥미를 가지고 있었습니다. (1/8)");
+            alert("특히 초등학교 시절, 트랜스포머와 같은 로봇 애니메이션을 보면서 단순한 호기심을 넘어서서 실제로 저런 로봇을 만드는 사람이 되고 싶다는 꿈을 가지게 되었습니다. (2/8)");
+            alert("당시에는 로봇이 이미 상당한 발전을 이루고 있었지만, 진정으로 사람처럼 생각하고 행동하는 인공지능은 아직 먼 미래의 이야기였습니다. (3/8)");
+            alert("그렇기 때문에 저는 로봇 공학보다는 인공지능 프로그래밍에 더 큰 관심을 가지게 되었습니다. (4/8)");
+            alert("단순한 기계적 움직임을 넘어서서 인간과 소통하고, 인간의 감정을 이해하며, 자율적으로 학습하고 성장하는 인공지능을 만드는 것이 저의 최종 목표가 되었습니다. (5/8)");
+            alert("또한, 최근 몇 년간 인공지능 기술의 급격한 발전을 목격하면서 이 분야에 대한 열정이 더욱 커졌습니다. (6/8)");
+            alert("특히 알파고와 챗GPT 같은 혁신적인 기술들이 세상을 놀라게 했고, 인공지능이 단순한 도구를 넘어 우리 삶의 일부분이 될 수 있다는 가능성을 보여주었습니다. (7/8)");
+            alert("이런 변화를 보며 저는 인공지능 프로그래머로서 사람들의 삶을 더 편리하고 풍요롭게 만드는 데 기여하고 싶다는 결심을 하게 되었습니다. (8/8)");
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const sections = document.querySelectorAll('.section');
+
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight * 0.8;
+
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+
+                    if (sectionTop < triggerBottom) {
+                        section.classList.add('visible');
+                    } else {
+                        section.classList.remove('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
+        });
+
+        window.onload = function() {
+            const canvas = document.getElementById('myCanvas');
+            const ctx = canvas.getContext('2d');
+
+            const image = new Image();
+            image.src = '프라임.png';
+
+            image.onload = function() {
+                ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+            }
+        }
+        
+        
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 10px;
+            text-decoration-line: none;
+            color: inherit;
+        }
+        .box {
+            border: 2px solid #333;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 8px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .shadow {
+            box-shadow: 3px 3px 5px #aaa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .heading_container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .heading_right {
+            text-align: right;
+            margin-bottom: 40px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+        .col {
+            flex: 1 0 33%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .detail-box p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .box:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .responsive-img-box {
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            
+        }
+        .responsive-img-box img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .responsive-img-box:hover img {
+            transform: scale(1.1);
+        }
+        .small{
+            border: 2px solid #333;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        span{
+            transition: font-size 3s;
+        }
+        span:hover{
+            font-size: 500%;
+        }
+        ul{
+            list-style-type: square;
+        }
+        .img2 img{   
+            position: absolute;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+            margin-bottom: 50px;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        canvas {
+            border: 1px solid black;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="img2">
+            <img src = "루리2.png" width="100" height="50">
+            <img src = "루리.png" width="100" height="50">
+        </div>
+
+        <script>
+            var imgArray = document.getElementsByTagName("img");
+
+            for(i = 0; i < imgArray.length; i++){
+                var obj = imgArray[i];
+                obj.style.zIndex = i;
+                obj.style.left = "10px";
+                obj.style.top = "20px";
+                obj.onclick = shuffle;
+            }
+
+            function shuffle(){
+                for(i = 0; i < imgArray.length; i++){
+                    var obj = imgArray[i];
+                    obj.style.zIndex++;
+                    obj.style.zIndex %= imgArray.length;
+                }
+            }
+        </script>
+       
+        <h1>Ruri</h1>
+        <hr>
+
+        <div>
+            <img src="AI.jpg" width="100%" height="100%">
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div class="heading_container">
+            <nav>
+                <a href="home.html"><strong>홈&ensp;&ensp;</strong></a>
+                <a href="intro.html"><strong>주제&ensp;&ensp;</strong></a>
+                <a href="growth.html"><strong>성장 과정&ensp;&ensp;</strong></a>
+                <a href="issue.html"><strong>사회 이슈&ensp;&ensp;</strong></a>
+                <a href="company.html"><strong>기업&ensp;&ensp;</strong></a>
+                <a href="future.html"><strong>미래 계획&ensp;&ensp;</strong></a>
+                <a href="skills.html"><strong>역량&ensp;&ensp;</strong></a>
+                <a href="project.html"><strong>프로젝트</strong></a>
+                
+            </nav>
+        </div>
+        
+    </header>
+
+    <section class="section" id="intro">
+
+        <div class="heading_container">
+            <h1><br><span>주제</span><br></h1>
+        </div>
+
+        <p>
+            <div class="small"><strong>주제 : </strong> 인공지능 프로그래머</div>
+
+            <div class="small"><strong>동기 : </strong> 어릴 때부터 로봇과 컴퓨터에 관심이 있었고, 인공지능 기술의 발전을 보며 인공지능 프로그래머로서 사람들의 삶을 개선하는 데 기여하고 싶다는 꿈을 가지게 되었습니다.  <button type="button" onclick="showMessage()">더 보기</button></div>
+
+            <div class="small"><strong>목표 : </strong> 모든 사람들이 스마트폰처럼 자신의 맞는 인공지능을 하나씩 가지고 다니며 자유롭게 사용하는 인공지능 프로그램을 만들고 싶습니다.</div>
+        </p>
+    
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section class="section" id="growth">
+        
+        <div class="heading_container">
+            <h1><br><span>성장 과정</span><br></h1>
+        </div>
+
+        
+        <div class="small img3">
+
+            <canvas id="myCanvas" width="300" height="460"></canvas>
+
+            <p>
+                &ensp;<strong>어릴 적부터</strong> 저는 만들기에 흥미가 많은 아이었습니다.<br><br>
+
+                &ensp;<strong>유치원 시절부터</strong> 작은 레고 또는 장난감을 설계도를 보며 손으로 직접 만들고 새로운 장난감이 나오면 직접 찾아보고 사서 만드는 일을 매우 좋아했습니다.
+            
+                그렇게 자라던 중 초등학교 때 본 영화 '트렌스포머'가 제 인생의 전환점이 되었습니다. 
+                
+                제가 만들고 있는 이런 레고 같은 멋있는 로봇이 직접 말하고 움직이는 모습을 보며 제 심장은 크게 두근 거렸습니다.
+                
+                그때 저는 단순한 호기심과 관심을 넘어서 저런 로봇을 만드는 과학자가 되겠다는 꿈을 가지게 되었습니다.<br><br>
+                
+                &ensp;<strong>초등학교 때</strong> 방과후에서 로봇을 조립하고 회로를 만드는 일도 직접 해보며 제 꿈을 키워나갔습니다.<br><br>
+
+                &ensp;<strong>그러나 중학교에 진학하면서</strong> 새로운 기술인 '알파고'를 보게 되었습니다.
+                
+                알파고를 보면서 저는 인공지능 로봇에 대한 견해를 조금 다르게 보기 시작했습니다.
+                
+                움직이는 몸과 사람 같이 생각하는 두뇌가 같이 공존해야 인공지능 로봇이 된다는 사실을 다시금 깨닫게 된 것입니다.
+                
+                그때부터 저는 로봇의 몸을 만드는 과학자가 아닌 로봇의 뇌를 만드는 과학자가 되고 싶다는 생각을 가지게 되었습니다.
+                
+                또한, 진학과 미래시에 대해 생각 때에도 충분히 가능성이 있다고 판단하는 사람이 많았기 때문에 저를 더욱 매료시켰습니다.<br><br>
+                
+                &ensp;<strong>고등학교에 진학</strong> 하고 나서는 확고하게 인공지능 프로그래머라는 구체적인 목표를 향해 나가갔습니다.
+                
+                컴퓨터 언어인 C언어 또는 파이썬을 독학하며 혼자 프로그램을 만들어보기도 했습니다.
+                
+                확실한 무언가를 만들지는 못했지만 그런 과정 하나하나에서 트렌스포머와 같은 인공지능을 만들겠다는 신념을 다시 다질 수 있었습니다.<br><br>
+                
+                &ensp;<strong>대학교에 진학</strong>한 후에는 컴퓨터에 관련된 것들을 배우면서 혼자 인공지능에 관한 자세한 내용들을 다루어나갔습니다.
+                
+                그리고 제가 만들고 싶은, 사람들이 필요로 하는 인공지능이 무엇일까를 고민한 후 제 나름대로 인공지능을 프로그래밍 해 나갔습니다.
+                
+                그 결과 논문으로 인공지능 암호화 시스템을 만들었고 그 인공지능 파트에 대한 내용을 혼자서 작성 할 수 있는 실력을 갖추게 되었습니다.<br><br>
+                
+                &ensp;<strong>이제 저는</strong> 인공지능 프로그래머로서의 꿈을 향해 계속해서 나아가고 있습니다. 사람들의 삶을 더욱 편리하고 풍요롭게 만드는 인공지능을 개발하기 우해 꾾임없이 학습하고, 도전하며 성장하고자 합니다.
+            </p>
+
+        </div>
+        
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section class="section" id="issue">
+
+        <div class="heading_container">
+            <h1><br><span>중요한 사회 이슈</span><br></h1>
+        </div>
+
+        <div class="small">
+
+        <p><ul><li><strong>챗 GPT를 처음 접했을 때,</strong> 저는 굉장히 큰 충격을 받았습니다. 이전까지의 인공지능의 기술은 주로 특정 작업을 자동화 하거나 단순한 질문에 답하는 정도에 그쳤지만, 챗 GPT는 그 이상의 기술이었습니다.</li><br><br>
+
+            <li>자연스럽게 사람들과 대화하고 인간인 것 같이 생각하고 반응하는 것을 보면서 저에게 큰 충격과 영감을 주었습니다.
+        
+            챗 GPT를 보면서 제가 만들고 싶어하는 인공지능이 꿈이 아니라는 사실에 조금 안심했습니다.</li><br><br>
+        
+            <li><strong>예를 들어</strong> 챗 GPT는 복잡한 문제를 해결할 때 양한 관점을 제시해주고 새로운 아이디어도 주었으며, 정보를 효율적으로 정리해주는 기술도 포함되어 있었습니다.</li><br><br>
+        
+            <li>이러한 기술을 보면서 저는 인공지능의 잠재력에 대해 더욱 깊이 이해 할 수 있게 해주었습니다.</li><br><br>
+            
+            <li>또한, 인공지능이 사람들과 소통을 얼마나 자연스럽게 할 수 있는 지 보여주었습니다.
+            
+            친구나 그 밖에 사람들이 대화하는 듯이 자연스럽게 질문하고 답변을 받을 수 있다는 점은 제가 생각하고 있었던 인공지능 로봇 뿐만이 아닌
+            인간의 삶에 얼마나 밀접하게 융합될 수 있는지를 잘 보여주었다고 생각합니다.</li><br><br>
+            
+            <li><strong>물론 단점도 몇가지 떠올랐습니다.</strong> 특정 상황에서는 여전히 인간의 직관과 감성을 완벽하게 이해하지 못하거나,
+            모호한 질문에 대한 답변이 불완전할 때도 있었습니다. </li><br><br>
+            
+            <li>그러나 이러한 한계는 저에게 인공지능 기술이 앞으로 나아갈 방향을 알려주는 좋은 이점으로 돌아 볼 수 있었습니다.</li></p>
+
+            <li><button id="redirectButton">chat GPT 바로가기</button></li>
+
+            <script>
+                document.getElementById('redirectButton').addEventListener('click', function() {
+                    window.location.href = 'https://chatgpt.com/?oai-dm=1';
+                });
+            </script>
+
+            </ul></div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section class="section" id="company">
+
+        <div class="container">
+
+            <div class="heading_container">
+
+                <h1><br><span>관심 기업</span><a href="https://www.samsung.com/sec/">(Samsung)</a><br></h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="responsive-img-box">
+
+                    <iframe src="https://www.samsung.com/sec/" height="800" width="100%"></iframe>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>삼성 개요</h4>
+                            <p>
+                                삼성은 한국을 대표하는 다국적 기업으로, 전 세계적으로 다양한 사업 분야에서 활동하고 있습니다.
+                                특히 전자, 반도체, 정보통신, 금융, 생명과학 등 여러 분야에서 세계적인 경쟁력을 가지고 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>삼성전자</h4>
+                            <p>
+                                삼성의 다양한 사업부 중에서도 삼성전자는 가장 유명하며, 스마트폰, TV, 가전제품, 반도체 등의 주요 제품을 생산하고 있습니다.
+                                삼성전자는 1969년 설립되어 오늘날 세계 최대 전자 기업 중 하나로 성장했습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>삼성전자의 성과</h4>
+                            <p>
+                                삼성전자는 반도체, 스마트폰, 디스플레이, 가전제품 등의 분야에서 글로벌 리더로 자리 잡고 있습니다.
+                                혁신적인 기술 개발과 뛰어난 품질 관리로 소비자들에게 높은 신뢰를 받고 있으며, 매년 막대한 금액을 연구개발에 투자하여 기술 선두주자로서의 위치를 유지하고 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>빅스비 소개</h4>
+                            <p>
+                                빅스비는 삼성전자가 개발한 인공지능 기반의 음성 비서 서비스입니다. 2017년 처음 소개된 빅스비는 자연어 처리와 음성 인식 기술을 통해 사용자와의 대화형 상호작용을 가능하게 합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="responsive-img-box">
+                    <p>
+                        <br>
+                    </p>
+                    <img src="빅스비.png"alt="Sample Image">
+                    
+                </div>
+
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>빅스비의 미래</h4>
+                            <p>
+                                빅스비가 더욱 발전한다면 우리는 빅스비를 통해 스마트 홈과 같은 사물 인터넷 기술로 강화될 수 있습니다.
+                                빅스비와 다양한 가전제품들을 연동시켜 사용자의 음성 명령으로 집안의 모든 기기를 제어할 수 있는 플랫폼을 제공할 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>빅스비의 주요 기능</h4>
+                            <p>
+                                <strong>음성 명령(Bixby voice)</strong> : 사용자는 음성으로 스마트폰의 다양한 기능을 제어할 수 있습니다.<br>
+                                <strong>비전(Bixby Vision)</strong> : 카메라를 통해 사물이나 텍스트를 인식하고, 관련 정보를 제공합니다.<br>
+                                <strong>루틴(Bixby Routines)</strong> : 사용자의 생활 패턴에 맞춘 자동화 기능을 제공합니다.<br>
+                                <strong>홈(Bixby Home)</strong> : 사용자에게 맞춤형 정보를 제공하는 대시보드 기능입니다.<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section class="section" id="future">
+
+        <div class="heading_container">
+            <h1><br><span>미래 계획</span><br></h1>
+        </div>
+
+        <div class="small">
+
+            <p><ul><li><strong>현재 저는 AI 기술에 대한 심도 깊은 공부와 창업 공부를 겸비한 취업 준비를 하고 있습니다.</strong></li><br><br>
+
+                <li>새로운 AI 기술을 개발하는 것보다는, 이미 존재하는 AI 기술들을 창의적이고 실용적으로 조합하는 방식에 중점을 두고 있습니다.
+                
+                이를 통해 더욱 혁신적이고 사용 가능한 AI 솔루션을 만들어 내는 것이 목표입니다.</li><br><br>
+                
+                <li>현재 진행 중인 프로젝트 중에 하나는 자연스러운 대화를 통해 컴퓨터 작업을 도와주거나, 일정 관리와 같은 사소한 일들을 처리해주는 AI 비서입니다.</li><br><br>
+                
+                <li><strong>이 AI 비서는</strong> 사용자의 음성을 인식하고, 이해하며, 필요한 작업을 자동으로 수행합니다.
+
+                현재 AI 비서를 통해 사용자의 목소리를 받아 그 음성 데이터를 텍스트 데이터로 변경하여 저장한 후 사용자가 그 내용을 알고 싶을 때나 까먹었을 경우 음성으로 알려주는 시스템을 구축하였습니다.
+                
+                이를 통해 사용자는 더욱 효율적으로 시간을 관리하고 사소한 약속이나 일정을 AI에게 맡긴 뒤 일상적인 업무를 처리할 수 있을 것이라 전망됩니다.</li><br><br>
+                
+                <li>또한, 저는 AI 기술을 활용한 또 다른 프로그램을 개발 중이며, 이와 관련된 논문을 작성하고 있습니다.
+
+                이 AI는 음성인식을 통한 암호화 시스템을 탑제하고 있습니다.
+                
+                이 논문을 통해 암호화와 AI 음성인식 기술의 이론적 기초를 다지고, 실제 응용 가능성을 입증하고자 합니다.
+                
+                이 논문은 학술대회에 제출할 예정으로, 이를 통해 AI 기술의 실제 구현 가능성과 실용성을 더욱 강화할 계획입니다.</li><br><br>
+                
+                <li>이와 같은 노력을 통해 AI 기술을 기반으로 한 창업 아이템을 구체화하고 있습니다. </li><br><br>
+                
+                <li><strong>현재 단계에서는</strong> 다양한 AI 기술들을 결합하여 혁신적인 제품을 개발하는 데 주력하고 있으며 이를 바탕으로 창업을 준비하고 있습니다.
+
+                다른 창업 준비로는 공주대학교 LMS에서 무료로 시청 할 수 있는 창업 관련 동영상을 시청하고 있으며, 책 또는 강의를 찾아 들으며 창업 아이템 이외의 것들도 차근차근 준비하고 있습니다.
+                
+                이러한 과정에서 단순히 기술적 지식뿐만 아니라, 비즈니스 모델과 시장요구를 이해하는 데에도 큰 도움이 되어 창업 준비 뿐만 아니라 취업 시장 준비까지 이어질 수 있을 것입니다.</li>
+
+            </ul></p>
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section class="section" id="skills">
+        <div class="heading_container">
+            <h1><br><span>본인 역량</span><br></h1>
+        </div>
+
+        <div class="small">
+            <p><ul><li><strong>저는 문제 해결 능력, 팀워크, 강한 책임감</strong>을 바탕으로 한 효과적인 업무 수행을 이끌어내고 그 결과물을 
+                가지고 추가적인 일을 할 수 있는 추진력과 창의성을 갖추고 있습니다.</li><br><br>
+
+                <li><strong>문제 해결 능력부터 차례대로 말씀드리면</strong> 팀 프로젝트 기반 수업에서 AI 프로그래밍을 혼자 맡아 팀원 
+                모두가 원하는 코드를 만들어냈습니다. 물론 프로젝트 초기에는 여러 가지 제약 조건으로 인해 팀의
+                방향성이 흔들렸지만, 저는 체계적인 분석과 창의적인 접근 방식을 통해 문제의 핵심을 파악하고 해결책을
+                제시했습니다. 이를 통해 팀은 최종적으로 좋은 평가를 받았고, 저는 문제해결 능력의 중요성을 깨달을 수 있었습니다.</li><br><br>
+
+                <li><strong>둘째는 팀원들과의 소통 능력인 팀워크에 대해 말씀드리겠습니다.</strong> 팀 프로젝트에서 가장 중요한 것은 팀워크라고
+                생각합니다. 따라서 저는 팀 간의 소통을 원활히 하고 모든 팀원이 같은 목표를 향해 나아갈 수 있도록 중간에서
+                조율하였습니다. 이 과정에서 상호 이해와 협력이 중요한 것을 배웠으며, 프로젝트는 성공적으로 완료되었습니다.
+                이 과정에서 팀워크의 중요성을 느끼고 더욱 강화할 수 있었습니다.</li><br><br>
+
+                <li><strong>마지막으로 책임감과 성실함입니다.</strong> 모든 일에 있어서 가장 중요한 것은 책임감과 성실함이라고 저는 생각합니다.
+                특히, 팀 프로젝트와 같이 모두가 피해를 보는 상황에서의 책임감과 성실함은 더욱이 중요하다고 생각합니다.
+                프로젝트의 마감 기한을 준수하고, 맡은 업무를 철저하게 완수하는 것이 그 무엇보다 중요하다는 태도 덕분에
+                끝까지 제가 맡은 업무를 대해 팀원들은 아무 말 없이 믿고 맡겨주었습니다.</li><br><br>
+
+                <li>이와 같은 경험들을 토대로 저는 다양한 도전 과제에 직면했을 때 체계적으로 접근하고, 팀과 협력하여
+                최상의 결과를 이끌어낼 수 있는 역량을 갖추게 되었습니다.</li><br><br>
+
+                <li>또한, 위 과정을 지나 또 다른 프로젝트가 진행 되었을 때 저는 한 번 성공한 경험과 자신에 대한 신뢰를 바탕으로
+                더욱 발전해 나갈 수 있을 것이란 자신감을 얻었습니다.</li><br><br>
+
+                <li>제가 만든 AI 프로그램으로 인해 모두가 행복해질 그날까지 저는 위와 같은 경험과 역량을 바탕으로 더욱 성장하겠습니다.</li>
+
+            </ul></p>
+        </div>
+
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section class="section" id="project">
+        <div class="heading_container">
+            <h1><br><span>프로젝트</span><br></h1>
+        </div>
+
+        <div class="small">
+            <p><ul><li>이 과제의 전체적인 목표는 제 인생에서 중요했던 것이 무엇인지 알려드리는 것입니다.</li><br><br>
+                
+                <li>서론에서는 제가 무엇을 가장 중요하게 여기고 있으며, 어떤 방향으로 나아가고 있는지를 설명하기 위해 제 꿈과 동기, 목표를 적었습니다. 
+                
+                주제에 있는 인공지능 프로그래머는 제 장래희망이고, 좌측 상단에 적혀 있는 Ruri는 제가 만들고 있는 인공지능의 이름입니다.</li><br><br>
+
+                <li>성장 과정과 중요한 사회 이슈에서는 제 유년 시절부터 시작하여 터닝 포인트가 되었던 사건들을 차례대로 기술하였습니다.</li><br><br>
+                
+                <li>제가 가고 싶은 기업은 삼성이며, 삼성이 현재 출시하고 더욱 발전시키고 있는 빅스비를 함께 만들고 싶다는 생각을 했습니다. 
+                
+                모든 사람이 접근하기 쉽고 간편한 사용 방법을 추구한다는 점에서 저의 마음을 끌었습니다.</li><br><br>
+
+                <li>현재 저는 따로 인공지능을 만들고 있으며, 이를 더욱 발전시키기 위해 고민하고 있습니다. 
+                
+                보다 효율적인 방법으로 빠르게 발전하기 위해 친구들과 함께 학부 융합 프로그램에 출품하기도 했습니다. 
+                
+                학부 융합을 진행하며 얻은 경험과 지식은 저의 일부가 되어 역량을 더욱 강화시켜 주었습니다.</li><br><br>
+
+                <li>처음에는 웹사이트 만들기 프로젝트를 진행하면서 어려운 점이 많았습니다.</li><br><br>
+                
+                <li>특히, 처음 구도를 잡는 과정에서 다른 사이트들을 참고했지만, 저의 실력이 부족하다는 것을 많이 느꼈습니다. 
+                
+                따라서 느린 속도긴 해도 조금씩 시작하여 복잡하고 어렵게 만들기보다는 사람이 읽기 쉽고 눈에 편한 웹사이트를 만들기로 했습니다. 
+                
+                각 부분을 따로 만들어야 했기에 하나를 건드리면 다른 것들이 망가지는 어려움이 있었고, 새로운 효과를 어디에 어떻게 넣어야 할지 고민이 많았습니다.
+
+                전체적으로 큰 틀을 만들어 보았지만 너무나도 조잡해보이는 것이 제 마음에 걸렸고, 보다 퀄리티 있는 웹사이트를 만들기 위해 스크롤을 내릴 때 텍스트가 서서히 나타나는 효과를 넣기로 결정하였습니다.</li><br><br>
+                
+                <li>이 과정에서 많은 어려움을 겪었고, 구글링과 챗GPT를 통해 코드를 구축하여 제 코드에 넣는 과정을 반복한 끝에 그럴듯한 효과를 구현하는 데 성공했습니다.</li>
+                
+            
+            </ul>
+            </p>
+        </div>
+
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</body>
+</html>

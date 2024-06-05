@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>성장 과정</title>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight * 0.8;
+
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+
+                    if (sectionTop < triggerBottom) {
+                        section.classList.add('visible');
+                    } else {
+                        section.classList.remove('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
+        });
+
+        window.onload = function() {
+            const canvas = document.getElementById('myCanvas');
+            const ctx = canvas.getContext('2d');
+
+            const image = new Image();
+            image.src = '프라임.png';
+
+            image.onload = function() {
+                ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+            }
+        }
+        
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, nav{
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 10px;
+            text-decoration-line: none;
+            color: inherit;
+        }
+        
+        .heading_container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .small{
+            border: 2px solid #333;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        span{
+            transition: font-size 3s;
+        }
+        span:hover{
+            font-size: 500%;
+        }
+        ul{
+            list-style-type: square;
+        }
+        .img2 img{   
+            position: absolute;
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+            margin-bottom: 50px;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        canvas {
+            border: 1px solid black;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="img2">
+            <img src = "루리2.png" width="100" height="50">
+            <img src = "루리.png" width="100" height="50">
+        </div>
+
+        <script>
+            var imgArray = document.getElementsByTagName("img");
+                for(i = 0; i < imgArray.length; i++){
+                    var obj = imgArray[i];
+                    obj.style.zIndex = i;
+                    obj.style.left = "10px";
+                    obj.style.top = "20px";
+                    obj.onclick = shuffle;
+            }
+            function shuffle(){
+                for(i = 0; i < imgArray.length; i++){
+                var obj = imgArray[i];
+                obj.style.zIndex++;
+                obj.style.zIndex %= imgArray.length;
+                }
+            }
+        </script>
+       
+        <h1>Ruri</h1>
+        <hr>
+
+        <div>
+            <img src="AI.jpg" width="100%" height="100%">
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div class="heading_container">
+            <nav>
+                <a href="home.html"><strong>홈&ensp;&ensp;</strong></a>
+                <a href="intro.html"><strong>주제&ensp;&ensp;</strong></a>
+                <a href="growth.html"><strong>성장 과정&ensp;&ensp;</strong></a>
+                <a href="issue.html"><strong>사회 이슈&ensp;&ensp;</strong></a>
+                <a href="company.html"><strong>기업&ensp;&ensp;</strong></a>
+                <a href="future.html"><strong>미래 계획&ensp;&ensp;</strong></a>
+                <a href="skills.html"><strong>역량&ensp;&ensp;</strong></a>
+                <a href="project.html"><strong>프로젝트</strong></a>
+                
+            </nav>
+        </div>
+        
+    </header>
+
+
+    <section class="section" id="growth">
+        
+        <div class="heading_container">
+            <h1><br><span>성장 과정</span><br></h1>
+        </div>
+
+        
+        <div class="small img3">
+
+            <canvas id="myCanvas" width="300" height="460"></canvas>
+
+            <p>
+                &ensp;<strong>어릴 적부터</strong> 저는 만들기에 흥미가 많은 아이었습니다.<br><br>
+
+                &ensp;<strong>유치원 시절부터</strong> 작은 레고 또는 장난감을 설계도를 보며 손으로 직접 만들고 새로운 장난감이 나오면 직접 찾아보고 사서 만드는 일을 매우 좋아했습니다.
+            
+                그렇게 자라던 중 초등학교 때 본 영화 '트렌스포머'가 제 인생의 전환점이 되었습니다. 
+                
+                제가 만들고 있는 이런 레고 같은 멋있는 로봇이 직접 말하고 움직이는 모습을 보며 제 심장은 크게 두근 거렸습니다.
+                
+                그때 저는 단순한 호기심과 관심을 넘어서 저런 로봇을 만드는 과학자가 되겠다는 꿈을 가지게 되었습니다.<br><br>
+                
+                &ensp;<strong>초등학교 때</strong> 방과후에서 로봇을 조립하고 회로를 만드는 일도 직접 해보며 제 꿈을 키워나갔습니다.<br><br>
+
+                &ensp;<strong>그러나 중학교에 진학하면서</strong> 새로운 기술인 '알파고'를 보게 되었습니다.
+                
+                알파고를 보면서 저는 인공지능 로봇에 대한 견해를 조금 다르게 보기 시작했습니다.
+                
+                움직이는 몸과 사람 같이 생각하는 두뇌가 같이 공존해야 인공지능 로봇이 된다는 사실을 다시금 깨닫게 된 것입니다.
+                
+                그때부터 저는 로봇의 몸을 만드는 과학자가 아닌 로봇의 뇌를 만드는 과학자가 되고 싶다는 생각을 가지게 되었습니다.
+                
+                또한, 진학과 미래시에 대해 생각 때에도 충분히 가능성이 있다고 판단하는 사람이 많았기 때문에 저를 더욱 매료시켰습니다.<br><br>
+                
+                &ensp;<strong>고등학교에 진학</strong> 하고 나서는 확고하게 인공지능 프로그래머라는 구체적인 목표를 향해 나가갔습니다.
+                
+                컴퓨터 언어인 C언어 또는 파이썬을 독학하며 혼자 프로그램을 만들어보기도 했습니다.
+                
+                확실한 무언가를 만들지는 못했지만 그런 과정 하나하나에서 트렌스포머와 같은 인공지능을 만들겠다는 신념을 다시 다질 수 있었습니다.<br><br>
+                
+                &ensp;<strong>대학교에 진학</strong>한 후에는 컴퓨터에 관련된 것들을 배우면서 혼자 인공지능에 관한 자세한 내용들을 다루어나갔습니다.
+                
+                그리고 제가 만들고 싶은, 사람들이 필요로 하는 인공지능이 무엇일까를 고민한 후 제 나름대로 인공지능을 프로그래밍 해 나갔습니다.
+                
+                그 결과 논문으로 인공지능 암호화 시스템을 만들었고 그 인공지능 파트에 대한 내용을 혼자서 작성 할 수 있는 실력을 갖추게 되었습니다.<br><br>
+                
+                &ensp;<strong>이제 저는</strong> 인공지능 프로그래머로서의 꿈을 향해 계속해서 나아가고 있습니다. 사람들의 삶을 더욱 편리하고 풍요롭게 만드는 인공지능을 개발하기 우해 꾾임없이 학습하고, 도전하며 성장하고자 합니다.
+            </p>
+        </div>
+        
+    </section>
+
+   
+
+</body>
+</html>

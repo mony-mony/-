@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>관련 회사</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight * 0.8;
+
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+
+                    if (sectionTop < triggerBottom) {
+                        section.classList.add('visible');
+                    } else {
+                        section.classList.remove('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
+        });
+
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, nav{
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 10px;
+            text-decoration-line: none;
+            color: inherit;
+        }
+        
+        .box {
+            border: 2px solid #333;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 8px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .shadow {
+            box-shadow: 3px 3px 5px #aaa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .heading_container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
+        .col {
+            flex: 1 0 33%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .detail-box h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .box:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .responsive-img-box {
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            
+        }
+
+        .responsive-img-box img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .responsive-img-box:hover img {
+            transform: scale(1.1);
+        }
+        
+        span{
+            transition: font-size 3s;
+        }
+        span:hover{
+            font-size: 500%;
+        }
+        ul{
+            list-style-type: square;
+        }
+        .img2 img{   
+            position: absolute;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+            margin-bottom: 50px;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="img2">
+            <img src = "루리2.png" width="100" height="50">
+            <img src = "루리.png" width="100" height="50">
+        </div>
+
+        <script>
+            var imgArray = document.getElementsByTagName("img");
+                for(i = 0; i < imgArray.length; i++){
+                    var obj = imgArray[i];
+                    obj.style.zIndex = i;
+                    obj.style.left = "10px";
+                    obj.style.top = "20px";
+                    obj.onclick = shuffle;
+            }
+            function shuffle(){
+                for(i = 0; i < imgArray.length; i++){
+                var obj = imgArray[i];
+                obj.style.zIndex++;
+                obj.style.zIndex %= imgArray.length;
+                }
+            }
+        </script>
+       
+        <h1>Ruri</h1>
+        <hr>
+
+        <div>
+            <img src="AI.jpg" width="100%" height="100%">
+        </div>
+
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div class="heading_container">
+            <nav>
+                <a href="home.html"><strong>홈&ensp;&ensp;</strong></a>
+                <a href="intro.html"><strong>주제&ensp;&ensp;</strong></a>
+                <a href="growth.html"><strong>성장 과정&ensp;&ensp;</strong></a>
+                <a href="issue.html"><strong>사회 이슈&ensp;&ensp;</strong></a>
+                <a href="company.html"><strong>기업&ensp;&ensp;</strong></a>
+                <a href="future.html"><strong>미래 계획&ensp;&ensp;</strong></a>
+                <a href="skills.html"><strong>역량&ensp;&ensp;</strong></a>
+                <a href="project.html"><strong>프로젝트</strong></a>
+                
+            </nav>
+        </div>
+        
+    </header>
+
+    <section class="section" id="company">
+
+        <div class="container">
+
+            <div class="heading_container">
+
+                <h1><br>관심 기업<a href="https://www.samsung.com/sec/">(Samsung)</a><br></h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="responsive-img-box">
+
+                    <iframe src="https://www.samsung.com/sec/" height="800" width="100%"></iframe>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>삼성 개요</h4>
+                            <p>
+                                삼성은 한국을 대표하는 다국적 기업으로, 전 세계적으로 다양한 사업 분야에서 활동하고 있습니다.
+                                특히 전자, 반도체, 정보통신, 금융, 생명과학 등 여러 분야에서 세계적인 경쟁력을 가지고 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>삼성전자</h4>
+                            <p>
+                                삼성의 다양한 사업부 중에서도 삼성전자는 가장 유명하며, 스마트폰, TV, 가전제품, 반도체 등의 주요 제품을 생산하고 있습니다.
+                                삼성전자는 1969년 설립되어 오늘날 세계 최대 전자 기업 중 하나로 성장했습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>삼성전자의 성과</h4>
+                            <p>
+                                삼성전자는 반도체, 스마트폰, 디스플레이, 가전제품 등의 분야에서 글로벌 리더로 자리 잡고 있습니다.
+                                혁신적인 기술 개발과 뛰어난 품질 관리로 소비자들에게 높은 신뢰를 받고 있으며, 매년 막대한 금액을 연구개발에 투자하여 기술 선두주자로서의 위치를 유지하고 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>빅스비 소개</h4>
+                            <p>
+                                빅스비는 삼성전자가 개발한 인공지능 기반의 음성 비서 서비스입니다. 2017년 처음 소개된 빅스비는 자연어 처리와 음성 인식 기술을 통해 사용자와의 대화형 상호작용을 가능하게 합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="responsive-img-box">
+                    <p>
+                        <br>
+                    </p>
+                    <img src="빅스비.png">
+                    
+                </div>
+
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>빅스비의 미래</h4>
+                            <p>
+                                빅스비가 더욱 발전한다면 우리는 빅스비를 통해 스마트 홈과 같은 사물 인터넷 기술로 강화될 수 있습니다.
+                                빅스비와 다양한 가전제품들을 연동시켜 사용자의 음성 명령으로 집안의 모든 기기를 제어할 수 있는 플랫폼을 제공할 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="box">
+                        <div class="detail-box">
+                            <h4>빅스비의 주요 기능</h4>
+                            <p>
+                                <strong>음성 명령(Bixby voice)</strong> : 사용자는 음성으로 스마트폰의 다양한 기능을 제어할 수 있습니다.<br>
+                                <strong>비전(Bixby Vision)</strong> : 카메라를 통해 사물이나 텍스트를 인식하고, 관련 정보를 제공합니다.<br>
+                                <strong>루틴(Bixby Routines)</strong> : 사용자의 생활 패턴에 맞춘 자동화 기능을 제공합니다.<br>
+                                <strong>홈(Bixby Home)</strong> : 사용자에게 맞춤형 정보를 제공하는 대시보드 기능입니다.<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
